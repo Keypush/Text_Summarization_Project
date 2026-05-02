@@ -42,4 +42,6 @@ class ModelEvaluationConfig:
     data_path: Path
     model_path: Path
     tokenizer_path: Path
+    trained_model: Path
+    trained_tokenizer: Path
     metric_file: Path

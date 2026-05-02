@@ -90,6 +90,8 @@ class ConfigurationManager:
             data_path=Path(evaluation_config.data_path),
             model_path=Path(evaluation_config.model_path),
             tokenizer_path=Path(evaluation_config.tokenizer_path),
+            trained_model=Path(evaluation_config.trained_model),
+            trained_tokenizer=Path(evaluation_config.trained_tokenizer),
             metric_file=Path(evaluation_config.metric_file)
         )
 

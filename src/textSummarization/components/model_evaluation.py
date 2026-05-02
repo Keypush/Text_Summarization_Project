@@ -46,10 +46,10 @@ class ModelEvaluation:
         score = metric.compute()
         return score
     
-    def evaluate(self):
+    def evaluate(self, eval_trained_model=False):
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        model = AutoModelForSeq2SeqLM.from_pretrained(self.config.model_path).to(device)
-        tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+        model = AutoModelForSeq2SeqLM.from_pretrained(self.config.model_path).to(device) if not eval_trained_model else AutoModelForSeq2SeqLM.from_pretrained(self.config.trained_model).to(device)
+        tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path) if not eval_trained_model else AutoTokenizer.from_pretrained(self.config.trained_tokenizer)
 
         dataset_samsum_pt = load_from_disk(self.config.data_path)
 
