@@ -34,7 +34,13 @@ conda activate summary
 pip install -r requirements.txt
 ```
 
+### STEP 03- Download the Model weights in the trained_model folder or retrain the model.
+```bash
+#Retrain the Model
+python main.py
+```
 
+### STEP 04- Prediction via FastApi 
 ```bash
 # Finally run the following command
 python app.py
